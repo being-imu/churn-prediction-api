@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Churn Prediction</title>
+</head>
+<body>
+<h2>Customer Churn Prediction</h2>
+
+<form method="POST">
+
+Gender:
+<select name="gender">
+    <option>Male</option>
+    <option>Female</option>
+</select><br><br>
+
+SeniorCitizen:
+<select name="SeniorCitizen">
+    <option value="0">No</option>
+    <option value="1">Yes</option>
+</select><br><br>
+
+Partner:
+<select name="Partner"><option>Yes</option><option>No</option></select><br><br>
+
+Dependents:
+<select name="Dependents"><option>Yes</option><option>No</option></select><br><br>
+
+Tenure:
+<input type="number" name="tenure" step="1"><br><br>
+
+PhoneService:
+<select name="PhoneService"><option>Yes</option><option>No</option></select><br><br>
+
+MultipleLines:
+<select name="MultipleLines">
+    <option>No</option>
+    <option>No phone service</option>
+    <option>Yes</option>
+</select><br><br>
+
+InternetService:
+<select name="InternetService">
+    <option>DSL</option>
+    <option>Fiber optic</option>
+    <option>No</option>
+</select><br><br>
+
+<!-- Repeat same pattern for remaining fields -->
+
+MonthlyCharges:
+<input type="number" step="0.01" name="MonthlyCharges"><br><br>
+
+TotalCharges:
+<input type="number" step="0.01" name="TotalCharges"><br><br>
+
+<button type="submit">Predict</button>
+
+</form>
+
+{% if result %}
+<h3>Result: {{ result }}</h3>
+<p>Churn Probability: {{ probability }}</p>
+{% endif %}
+
+</body>
+</html>
